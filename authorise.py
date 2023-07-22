@@ -15,7 +15,7 @@ bcrypt_context = CryptContext(
     deprecated='auto'
 )
 oauth2_bearer = OAuth2PasswordBearer(tokenUrl='token')
-SECRET_KEY = 'amit2410sahnibihar#'
+SECRET_KEY = 'amit241097sahnibihar#'
 ALGORITHM = 'HS256'
 
 
