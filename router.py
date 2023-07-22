@@ -5,6 +5,6 @@ app = FastAPI()
 app.include_router(router)
 
 
-@app.get('/name')
+@app.get('/')
 def get_name():
-    return {'name': 'amit'}
+    return {'details': 'this is router of my appliaction'}
