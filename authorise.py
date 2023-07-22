@@ -6,7 +6,7 @@ from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from jose import jwt, JWTError
 
 router = APIRouter(
-    prefix='/router_1',
+    prefix='/auth',
     tags=['router_1']
 )
 
@@ -15,7 +15,7 @@ bcrypt_context = CryptContext(
     deprecated='auto'
 )
 oauth2_bearer = OAuth2PasswordBearer(tokenUrl='token')
-SECRET_KEY = 'amit2410sahnibihar#'
+SECRET_KEY = 'amit241097sahnibihar#'
 ALGORITHM = 'HS256'
 
 
