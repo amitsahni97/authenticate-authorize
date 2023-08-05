@@ -26,3 +26,13 @@ class UserSignInDetails(UserDetailsSchema):
 class UserResponse(BaseModel):
     userName: str
     userId: int
+
+
+class CommonMessage(BaseModel):
+    """Model to give common response"""
+    message: str
+
+
+class SignInCommonMessage(CommonMessage):
+    """Model to give response for Sign in"""
+    pass

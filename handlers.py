@@ -1,3 +1,7 @@
+from datetime import datetime, timedelta
+from jose import jwt
+
+
 def verify_password(password, password_2):
     """
     Function to match both passwords
@@ -42,3 +46,17 @@ def authenticate_user(bcrypt_context, password: str, hashed_password: str) -> bo
     if not bcrypt_context.verify(password, hashed_password):
         return False
     return True
+
+
+def create_access_token(
+        user_name: str,
+        user_id: int,
+        expires_delta: timedelta,
+        secret_key: str,
+        algorithm: str
+):
+    """Method to crate access token"""
+    encode = {'name': user_name, 'id': user_id}
+    expires = datetime.utcnow() + expires_delta
+    encode.update({'exp': expires})
+    return jwt.encode(encode, secret_key, algorithm=algorithm)
